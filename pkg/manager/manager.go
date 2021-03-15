@@ -2,8 +2,8 @@ package manager
 
 import (
 	"fmt"
-	"github.com/F5Networks/f5-ipam-controller/pkg/ipamspec"
-	log "github.com/F5Networks/f5-ipam-controller/pkg/vlogger"
+	"github.com/vklohiya/f5-ipam-controller/pkg/ipamspec"
+	log "github.com/vklohiya/f5-ipam-controller/pkg/vlogger"
 )
 
 // Manager defines the interface that the IPAM system should implement

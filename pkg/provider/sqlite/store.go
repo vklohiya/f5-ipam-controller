@@ -3,7 +3,7 @@ package sqlite
 import (
 	"database/sql"
 	"fmt"
-	log "github.com/F5Networks/f5-ipam-controller/pkg/vlogger"
+	log "github.com/vklohiya/f5-ipam-controller/pkg/vlogger"
 	_ "github.com/mattn/go-sqlite3"
 )
 

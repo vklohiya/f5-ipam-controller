@@ -19,7 +19,7 @@ limitations under the License.
 package versioned
 
 import (
-	k8sv1 "github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned/typed/fic/v1"
+	k8sv1 "github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned/typed/fic/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

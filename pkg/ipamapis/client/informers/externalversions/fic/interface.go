@@ -19,8 +19,8 @@ limitations under the License.
 package k8s
 
 import (
-	v1 "github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/client/informers/externalversions/fic/v1"
-	internalinterfaces "github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/client/informers/externalversions/fic/v1"
+	internalinterfaces "github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

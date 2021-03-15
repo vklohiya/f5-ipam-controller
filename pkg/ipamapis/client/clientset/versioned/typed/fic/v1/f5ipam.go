@@ -19,10 +19,11 @@ limitations under the License.
 package v1
 
 import (
+	"context"
 	"time"
 
-	v1 "github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/apis/fic/v1"
-	scheme "github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned/scheme"
+	v1 "github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/apis/fic/v1"
+	scheme "github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -71,7 +72,7 @@ func (c *f5IPAMs) Get(name string, options metav1.GetOptions) (result *v1.F5IPAM
 		Resource("f5ipams").
 		Name(name).
 		VersionedParams(&options, scheme.ParameterCodec).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }
@@ -88,7 +89,7 @@ func (c *f5IPAMs) List(opts metav1.ListOptions) (result *v1.F5IPAMList, err erro
 		Resource("f5ipams").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }
@@ -105,7 +106,7 @@ func (c *f5IPAMs) Watch(opts metav1.ListOptions) (watch.Interface, error) {
 		Resource("f5ipams").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Watch()
+		Watch(context.TODO())
 }
 
 // Create takes the representation of a f5IPAM and creates it.  Returns the server's representation of the f5IPAM, and an error, if there is any.
@@ -115,7 +116,7 @@ func (c *f5IPAMs) Create(f5IPAM *v1.F5IPAM) (result *v1.F5IPAM, err error) {
 		Namespace(c.ns).
 		Resource("f5ipams").
 		Body(f5IPAM).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }
@@ -128,7 +129,7 @@ func (c *f5IPAMs) Update(f5IPAM *v1.F5IPAM) (result *v1.F5IPAM, err error) {
 		Resource("f5ipams").
 		Name(f5IPAM.Name).
 		Body(f5IPAM).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }
@@ -144,7 +145,7 @@ func (c *f5IPAMs) UpdateStatus(f5IPAM *v1.F5IPAM) (result *v1.F5IPAM, err error)
 		Name(f5IPAM.Name).
 		SubResource("status").
 		Body(f5IPAM).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }
@@ -156,7 +157,7 @@ func (c *f5IPAMs) Delete(name string, options *metav1.DeleteOptions) error {
 		Resource("f5ipams").
 		Name(name).
 		Body(options).
-		Do().
+		Do(context.TODO()).
 		Error()
 }
 
@@ -172,7 +173,7 @@ func (c *f5IPAMs) DeleteCollection(options *metav1.DeleteOptions, listOptions me
 		VersionedParams(&listOptions, scheme.ParameterCodec).
 		Timeout(timeout).
 		Body(options).
-		Do().
+		Do(context.TODO()).
 		Error()
 }
 
@@ -185,7 +186,7 @@ func (c *f5IPAMs) Patch(name string, pt types.PatchType, data []byte, subresourc
 		SubResource(subresources...).
 		Name(name).
 		Body(data).
-		Do().
+		Do(context.TODO()).
 		Into(result)
 	return
 }

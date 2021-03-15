@@ -18,9 +18,9 @@ package ipammachinery
 
 import (
 	"fmt"
-
-	"github.com/F5Networks/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned"
-	log "github.com/F5Networks/f5-ipam-controller/pkg/vlogger"
+	"context"
+	"github.com/vklohiya/f5-ipam-controller/pkg/ipamapis/client/clientset/versioned"
+	log "github.com/vklohiya/f5-ipam-controller/pkg/vlogger"
 	apiextensionv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	extClient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
@@ -128,7 +128,7 @@ func RegisterCRD(clientset extClient.Interface) error {
 			},
 		},
 	}
-	_, err := clientset.ApiextensionsV1beta1().CustomResourceDefinitions().Create(crd)
+	_, err := clientset.ApiextensionsV1beta1().CustomResourceDefinitions().Create(context.TODO(), crd, meta_v1.CreateOptions{})
 	if err != nil && apierrors.IsAlreadyExists(err) {
 		return nil
 	}

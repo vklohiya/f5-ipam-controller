@@ -8,11 +8,11 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/F5Networks/f5-ipam-controller/pkg/controller"
-	"github.com/F5Networks/f5-ipam-controller/pkg/manager"
-	"github.com/F5Networks/f5-ipam-controller/pkg/orchestration"
-	log "github.com/F5Networks/f5-ipam-controller/pkg/vlogger"
-	clog "github.com/F5Networks/f5-ipam-controller/pkg/vlogger/console"
+	"github.com/vklohiya/f5-ipam-controller/pkg/controller"
+	"github.com/vklohiya/f5-ipam-controller/pkg/manager"
+	"github.com/vklohiya/f5-ipam-controller/pkg/orchestration"
+	log "github.com/vklohiya/f5-ipam-controller/pkg/vlogger"
+	clog "github.com/vklohiya/f5-ipam-controller/pkg/vlogger/console"
 	flag "github.com/spf13/pflag"
 )
 

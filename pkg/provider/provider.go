@@ -5,8 +5,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/F5Networks/f5-ipam-controller/pkg/provider/sqlite"
-	log "github.com/F5Networks/f5-ipam-controller/pkg/vlogger"
+	"github.com/vklohiya/f5-ipam-controller/pkg/provider/sqlite"
+	log "github.com/vklohiya/f5-ipam-controller/pkg/vlogger"
 )
 
 type IPAMProvider struct {
